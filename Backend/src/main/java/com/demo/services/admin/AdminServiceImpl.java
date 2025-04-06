@@ -32,7 +32,10 @@ public class AdminServiceImpl implements AdminService {
 	private final TaskRepository taskRepository;
 	private final JwtUtil jwtUtil;
 	private final CommentRepository commentRepository;
-	
+
+	/**
+	 * Retrieves all users with EMPLOYEE role.
+	 */
 	@Override
 	public List<UserDto> getUsers() {
 	    return userRepository.findAll()
@@ -42,6 +45,9 @@ public class AdminServiceImpl implements AdminService {
 	        .collect(Collectors.toList());
 	}
 
+	/**
+	 * Creates a new task and assigns it to an employee.
+	 */
 	@Override
 	public TaskDao createTask(TaskDao taskDao) {
 		Optional<User> optionalUser = userRepository.findById(taskDao.getEmployeeId());
@@ -51,14 +57,16 @@ public class AdminServiceImpl implements AdminService {
 		    task.setDescription(taskDao.getDescription());
 		    task.setPriority(taskDao.getPriority());
 		    task.setDueDate(taskDao.getDueDate());
-		    task.setTaskStatus(TaskStatus.INPROGRESS);
+		    task.setTaskStatus(TaskStatus.INPROGRESS); // Default status
 		    task.setUser(optionalUser.get());
 		    return taskRepository.save(task).getTaskDao();
 		}
-
 		return null;
 	}
 
+	/**
+	 * Returns a list of all tasks, sorted by due date (descending).
+	 */
 	@Override
 	public List<TaskDao> getAllTasks() {
 		return taskRepository.findAll()
@@ -68,21 +76,31 @@ public class AdminServiceImpl implements AdminService {
 				.collect(Collectors.toList());
 	}
 
+	/**
+	 * Deletes a task by its ID.
+	 */
 	@Override
 	public void deleteTask(Long id) {
 		taskRepository.deleteById(id);
 	}
 
+	/**
+	 * Retrieves a task by its ID.
+	 */
 	@Override
 	public TaskDao getTaskById(Long id) {
 		Optional<Task> optionalTask = taskRepository.findById(id);
 		return optionalTask.map(Task::getTaskDao).orElse(null);
 	}
 
+	/**
+	 * Updates the specified task.
+	 */
 	@Override
 	public TaskDao updateTask(Long id, TaskDao taskDao) {
 		Optional<Task> optionalTask = taskRepository.findById(id);
 		Optional<User> optionalUser = userRepository.findById(taskDao.getEmployeeId());
+
 		if (optionalTask.isPresent() && optionalUser.isPresent()) {
 		    Task existingTask = optionalTask.get();
 		    existingTask.setTitle(taskDao.getTitle());
@@ -95,9 +113,11 @@ public class AdminServiceImpl implements AdminService {
 		}
 
 		return null;
-
 	}
-	
+
+	/**
+	 * Maps string representation of task status to TaskStatus enum.
+	 */
 	private TaskStatus mapStringToTaskStatus(String status) {
 	    return switch (status) {
 	        case "PENDING"     -> TaskStatus.PENDING;
@@ -108,6 +128,9 @@ public class AdminServiceImpl implements AdminService {
 	    };
 	}
 
+	/**
+	 * Searches tasks by title, sorted by due date (descending).
+	 */
 	@Override
 	public List<TaskDao> searchTaskByTitle(String title) {
 		return taskRepository.findAllByTitleContaining(title)
@@ -117,6 +140,9 @@ public class AdminServiceImpl implements AdminService {
 				.collect(Collectors.toList());
 	}
 
+	/**
+	 * Creates a comment on a specific task by the logged-in user.
+	 */
 	@Override
 	public CommentDao createComment(Long taskId, String content) {
 		Optional<Task> optionalTask = taskRepository.findById(taskId);
@@ -128,14 +154,15 @@ public class AdminServiceImpl implements AdminService {
 		    comment.setContent(content);
 		    comment.setTask(optionalTask.get());
 		    comment.setUser(user);
-
 		    return commentRepository.save(comment).getCommentDao();
 		}
 
 		throw new EntityNotFoundException("User or Task not found");
-
 	}
 
+	/**
+	 * Retrieves all comments associated with a specific task.
+	 */
 	@Override
 	public List<CommentDao> getCommentsByTaskId(Long taskId) {
 		return commentRepository.findAllByTaskId(taskId)
@@ -143,7 +170,4 @@ public class AdminServiceImpl implements AdminService {
 				.map(Comment::getCommentDao)
 				.collect(Collectors.toList());
 	}
-
-
-
 }

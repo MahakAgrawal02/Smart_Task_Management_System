@@ -16,12 +16,15 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping("/api/employee")
 @RequiredArgsConstructor
-@CrossOrigin("*")
+@CrossOrigin("*") // Allow CORS requests from any origin
 @Slf4j
 public class EmployeeController {
 
     private final EmployeeService employeeService;
 
+    /**
+     * Retrieves tasks assigned to the currently logged-in employee.
+     */
     @GetMapping("/tasks")
     public ResponseEntity<List<TaskDao>> getTasksByUserId() {
         log.info("Fetching tasks for logged-in employee.");
@@ -30,6 +33,12 @@ public class EmployeeController {
         return ResponseEntity.ok(tasks);
     }
 
+    /**
+     * Updates the status of a task by its ID.
+     *
+     * @param id     Task ID
+     * @param status New status to apply
+     */
     @GetMapping("/task/{id}/{status}")
     public ResponseEntity<TaskDao> updateTask(@PathVariable Long id, @PathVariable String status) {
         log.info("Updating task with ID {} to status {}", id, status);
@@ -42,6 +51,11 @@ public class EmployeeController {
         return ResponseEntity.ok(updatedTaskDao);
     }
 
+    /**
+     * Fetches a specific task by its ID.
+     *
+     * @param id Task ID
+     */
     @GetMapping("/task/{id}")
     public ResponseEntity<TaskDao> getTaskById(@PathVariable Long id) {
         log.info("Fetching task details for ID {}", id);
@@ -54,6 +68,12 @@ public class EmployeeController {
         return ResponseEntity.ok(task);
     }
 
+    /**
+     * Adds a comment to a specific task.
+     *
+     * @param taskId  ID of the task to comment on
+     * @param content Comment content
+     */
     @PostMapping("/task/comment/{taskId}")
     public ResponseEntity<CommentDao> createComment(@PathVariable Long taskId, @RequestParam String content) {
         log.info("Creating comment for task ID {} with content: {}", taskId, content);
@@ -66,6 +86,11 @@ public class EmployeeController {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdCommentDao);
     }
 
+    /**
+     * Retrieves all comments associated with a given task ID.
+     *
+     * @param taskId ID of the task
+     */
     @GetMapping("/comments/{taskId}")
     public ResponseEntity<List<CommentDao>> getCommentsByTaskId(@PathVariable Long taskId) {
         log.info("Fetching comments for task ID {}", taskId);
@@ -73,5 +98,4 @@ public class EmployeeController {
         log.info("Found {} comments for task ID {}", comments.size(), taskId);
         return ResponseEntity.ok(comments);
     }
-
 }
