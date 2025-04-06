@@ -40,5 +40,15 @@ The Smart Task Management System aims to provide a secure, user-friendly web pla
 
 ## `Installation`:
 ### MySQL: Database creation: 
-### Clone the repository: 
+![Screenshot 2025-04-06 173940](https://github.com/user-attachments/assets/152c534c-c0d6-4124-acc8-6577ae051f56)
+### Clone the repository: https://github.com/MahakAgrawal02/Smart_Task_Management_System
 ### Backend:
+- Step 1: Update below configuration fields in application.properties inside /resources folder with database name, username and password
+![Screenshot 2025-04-06 174613](https://github.com/user-attachments/assets/90c8d368-4d47-40c3-9244-cf6c538466fa)
+- Step 2: Run Backend as Spring Boot
+### Frontend:
+- Step 1: Run npm install
+- Step 2: Run npm start
+### Go to http://localhost:4200/
+- You can acces admin using email as admin@test.com and password admin
+- You can register and login employees with correct credentials
