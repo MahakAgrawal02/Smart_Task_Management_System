@@ -1,4 +1,7 @@
 # `Smart Task Management System`
+## Demo: 
+https://github.com/user-attachments/assets/db3b0ab8-7747-48c5-9ac6-7efd40d99b5e
+
 ## Purpose
 The Smart Task Management System aims to provide a secure, user-friendly web platform for efficient task creation, assignment, and tracking. It enhances productivity through features like role-based access, prioritization, deadlines, notifications, and search/filter options—ensuring better collaboration, accountability, and streamlined task management within organizations.
 
