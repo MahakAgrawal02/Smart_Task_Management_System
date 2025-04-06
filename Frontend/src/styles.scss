@@ -1,0 +1,115 @@
+/* Global styles to be added to styles.scss */
+
+/* Modern color palette */
+:root {
+  --primary-color: #ff4800;
+  --primary-light: #ffb74d;
+  --primary-dark: #f57c00;
+  --accent-color: #ff5722;
+  --accent-light: #ff8a65;
+  --accent-dark: #e64a19;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --background-light: #f5f7fa;
+  --background-card: #ffffff;
+  --success: #4caf50;
+  --warning: #ff9800;
+  --error: #f44336;
+  --border-radius: 8px;
+  --shadow-light: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-medium: 0 4px 8px rgba(0,0,0,0.12);
+  --shadow-heavy: 0 8px 16px rgba(0,0,0,0.14);
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* Typography improvements */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-primary);
+  background-color: var(--background-light);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Global card styling */
+.mat-card {
+  border-radius: var(--border-radius) !important;
+  box-shadow: var(--shadow-medium) !important;
+  transition: box-shadow var(--transition-normal);
+  
+  &:hover {
+    box-shadow: var(--shadow-heavy) !important;
+  }
+}
+
+/* Form styling */
+.mat-form-field {
+  width: 100%;
+}
+
+/* Button styling */
+.mat-raised-button.mat-primary {
+  background-color: var(--primary-color);
+  transition: background-color var(--transition-fast);
+  
+  &:hover {
+    background-color: var(--primary-dark);
+  }
+}
+
+/* Status badges */
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  display: inline-block;
+  
+  &.todo {
+    background-color: #e0f7fa;
+    color: #006064;
+  }
+  
+  &.in-progress {
+    background-color: #fff8e1;
+    color: #ff6f00;
+  }
+  
+  &.done {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+  }
+}
+
+/* Container styles */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Animate page transitions */
+.router-container {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 16px;
+  }
+}

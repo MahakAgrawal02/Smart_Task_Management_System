@@ -1,0 +1,84 @@
+2025-04-06T17:28:36.946Z  INFO 131474 --- [Smart_Task] [main] com.demo.SmartTaskApplication            : Starting SmartTaskApplication using Java 21.0.6 with PID 131474 (/home/mahak/incture_java/smart_emp_management-/Smart_Task/target/classes started by mahak in /home/mahak/incture_java/smart_emp_management-/Smart_Task)
+2025-04-06T17:28:36.949Z  INFO 131474 --- [Smart_Task] [main] com.demo.SmartTaskApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-04-06T17:28:37.911Z  INFO 131474 --- [Smart_Task] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-06T17:28:37.982Z  INFO 131474 --- [Smart_Task] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 3 JPA repository interfaces.
+2025-04-06T17:28:38.544Z  INFO 131474 --- [Smart_Task] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2025-04-06T17:28:38.565Z  INFO 131474 --- [Smart_Task] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-06T17:28:38.566Z  INFO 131474 --- [Smart_Task] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-06T17:28:38.621Z  INFO 131474 --- [Smart_Task] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-06T17:28:38.621Z  INFO 131474 --- [Smart_Task] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1604 ms
+2025-04-06T17:28:38.764Z  INFO 131474 --- [Smart_Task] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-06T17:28:38.840Z  INFO 131474 --- [Smart_Task] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-06T17:28:38.877Z  INFO 131474 --- [Smart_Task] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-06T17:28:39.147Z  INFO 131474 --- [Smart_Task] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-06T17:28:39.175Z  INFO 131474 --- [Smart_Task] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-06T17:28:39.515Z  INFO 131474 --- [Smart_Task] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@213012a0
+2025-04-06T17:28:39.519Z  INFO 131474 --- [Smart_Task] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-06T17:28:39.586Z  WARN 131474 --- [Smart_Task] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-06T17:28:39.604Z  INFO 131474 --- [Smart_Task] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-06T17:28:40.411Z  INFO 131474 --- [Smart_Task] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-06T17:28:40.556Z  INFO 131474 --- [Smart_Task] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-06T17:28:41.052Z  INFO 131474 --- [Smart_Task] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-06T17:28:41.084Z  WARN 131474 --- [Smart_Task] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-06T17:28:41.578Z  INFO 131474 --- [Smart_Task] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path '/'
+2025-04-06T17:28:41.591Z  INFO 131474 --- [Smart_Task] [main] com.demo.SmartTaskApplication            : Started SmartTaskApplication in 5.217 seconds (process running for 5.629)
+2025-04-06T17:42:56.167Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-06T17:42:56.169Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-06T17:42:56.174Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-04-06T17:42:56.533Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-3] c.demo.controller.auth.AuthController    : Received signup request for email: muskan@test.com
+2025-04-06T17:42:56.863Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-3] c.demo.controller.auth.AuthController    : User created successfully: muskan@test.com
+2025-04-06T17:43:20.017Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-4] c.demo.controller.auth.AuthController    : Login attempt for email: muskan@test.com
+2025-04-06T17:43:20.415Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-4] c.demo.controller.auth.AuthController    : Login successful for user ID: 5, role: EMPLOYEE
+2025-04-06T17:43:22.549Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-6] c.d.c.employee.EmployeeController        : Fetching tasks for logged-in employee.
+2025-04-06T17:43:22.622Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-6] c.d.c.employee.EmployeeController        : Found 0 tasks for employee.
+2025-04-06T17:43:40.500Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-8] c.demo.controller.auth.AuthController    : Login attempt for email: admin@test.com
+2025-04-06T17:43:40.697Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-8] c.demo.controller.auth.AuthController    : Login successful for user ID: 1, role: ADMIN
+2025-04-06T17:43:40.780Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-10] c.demo.controller.admin.AdminController  : Admin fetching all tasks.
+2025-04-06T17:43:47.666Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-3] c.demo.controller.admin.AdminController  : Admin requested user list.
+2025-04-06T17:44:18.777Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-4] c.demo.controller.admin.AdminController  : Admin creating new task: Test title
+2025-04-06T17:44:18.846Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-4] c.demo.controller.admin.AdminController  : Task created successfully with ID: 4
+2025-04-06T17:44:18.934Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-6] c.demo.controller.admin.AdminController  : Admin fetching all tasks.
+2025-04-06T17:44:22.801Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-10] c.demo.controller.admin.AdminController  : Admin fetching comments for Task ID: 4
+2025-04-06T17:44:22.801Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-9] c.demo.controller.admin.AdminController  : Admin fetching task with ID: 4
+2025-04-06T17:44:29.124Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-3] c.demo.controller.admin.AdminController  : Admin adding comment to Task ID: 4
+2025-04-06T17:44:29.196Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-3] c.demo.controller.admin.AdminController  : Comment created on Task ID: 4
+2025-04-06T17:44:29.259Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-4] c.demo.controller.admin.AdminController  : Admin fetching comments for Task ID: 4
+2025-04-06T17:44:34.257Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-6] c.demo.controller.admin.AdminController  : Admin fetching all tasks.
+2025-04-06T17:44:36.001Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-10] c.demo.controller.admin.AdminController  : Admin requested user list.
+2025-04-06T17:44:36.002Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-9] c.demo.controller.admin.AdminController  : Admin fetching task with ID: 4
+2025-04-06T17:44:40.070Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-3] c.demo.controller.admin.AdminController  : Admin updating task with ID: 4
+2025-04-06T17:44:40.180Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-3] c.demo.controller.admin.AdminController  : Task updated successfully. ID: 4
+2025-04-06T17:44:40.264Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-4] c.demo.controller.admin.AdminController  : Admin fetching all tasks.
+2025-04-06T17:44:43.671Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-6] c.demo.controller.admin.AdminController  : Admin deleting task with ID: 3
+2025-04-06T17:44:43.783Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-7] c.demo.controller.admin.AdminController  : Admin fetching all tasks.
+2025-04-06T17:45:01.900Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-10] c.demo.controller.auth.AuthController    : Login attempt for email: muskan@test.com
+2025-04-06T17:45:02.098Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-10] c.demo.controller.auth.AuthController    : Login successful for user ID: 5, role: EMPLOYEE
+2025-04-06T17:45:02.164Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-1] c.d.c.employee.EmployeeController        : Fetching tasks for logged-in employee.
+2025-04-06T17:45:02.196Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-1] c.d.c.employee.EmployeeController        : Found 1 tasks for employee.
+2025-04-06T17:45:04.712Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-5] c.d.c.employee.EmployeeController        : Fetching task details for ID 4
+2025-04-06T17:45:04.718Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-4] c.d.c.employee.EmployeeController        : Fetching comments for task ID 4
+2025-04-06T17:45:04.733Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-5] c.d.c.employee.EmployeeController        : Task found: ID 4
+2025-04-06T17:45:04.734Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-4] c.d.c.employee.EmployeeController        : Found 1 comments for task ID 4
+2025-04-06T17:45:09.191Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-7] c.d.c.employee.EmployeeController        : Fetching tasks for logged-in employee.
+2025-04-06T17:45:09.215Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-7] c.d.c.employee.EmployeeController        : Found 1 tasks for employee.
+2025-04-06T17:45:12.803Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-10] c.d.c.employee.EmployeeController        : Updating task with ID 4 to status COMPLETED
+2025-04-06T17:45:12.844Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-10] c.d.c.employee.EmployeeController        : Task updated successfully: ID 4
+2025-04-06T17:45:12.882Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-9] c.d.c.employee.EmployeeController        : Fetching tasks for logged-in employee.
+2025-04-06T17:45:12.912Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-9] c.d.c.employee.EmployeeController        : Found 1 tasks for employee.
+2025-04-06T17:45:27.551Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-2] c.demo.controller.auth.AuthController    : Login attempt for email: admin@test.com
+2025-04-06T17:45:27.738Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-2] c.demo.controller.auth.AuthController    : Login successful for user ID: 1, role: ADMIN
+2025-04-06T17:45:27.809Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-5] c.demo.controller.admin.AdminController  : Admin fetching all tasks.
+2025-04-06T17:45:30.978Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-7] c.demo.controller.admin.AdminController  : Admin fetching task with ID: 4
+2025-04-06T17:45:30.978Z  INFO 131474 --- [Smart_Task] [http-nio-8084-exec-8] c.demo.controller.admin.AdminController  : Admin fetching comments for Task ID: 4
+2025-04-06T17:52:03.071Z  INFO 131474 --- [Smart_Task] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-06T17:52:03.080Z  INFO 131474 --- [Smart_Task] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-06T17:52:03.091Z  INFO 131474 --- [Smart_Task] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-06T17:52:03.099Z  INFO 131474 --- [Smart_Task] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-06T17:52:03.120Z  INFO 131474 --- [Smart_Task] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
